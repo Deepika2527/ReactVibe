@@ -1,0 +1,372 @@
+React – Ways to Create a React Application
+
+There are three main ways to create a React application.
+
+1. Using CDN Links
+
+React can be used directly inside an HTML file by adding CDN links.
+
+No installation required
+
+Easy for beginners
+
+Mostly used for learning or small experiments
+
+Example:
+
+<script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+Here we load React and ReactDOM libraries directly from the internet.
+
+2. Using CRA (Create React App)
+
+Command:
+
+npx create-react-app my-app
+
+Create React App automatically creates a complete React project structure.
+
+Features:
+
+Good for beginners
+
+Preconfigured with tools
+
+Uses Webpack and Babel internally
+
+Provides ready-to-use React environment
+
+3. Using Vite (Recommended Modern Method)
+
+Command:
+
+npm create vite@latest app-name -- --template react
+
+Why Vite?
+
+Much faster than CRA
+
+Lightweight
+
+Modern build tool
+
+Popular in modern React development
+
+Difference Between npm and npx
+npm
+
+npm = Node Package Manager
+
+Used to install packages into your project or system.
+
+Installed packages are stored inside the node_modules folder.
+
+Example:
+
+npm install react
+npx
+
+npx = Node Package Executor
+
+Used to run packages directly without installing them globally.
+
+Example:
+
+npx create-react-app my-app
+Real Life Example (Spotify Example)
+
+Imagine Spotify App 🎵
+
+npm Example
+
+You install Spotify on your phone.
+
+The app stays permanently on your phone
+
+You can open it anytime
+
+👉 Similar to installing packages using npm
+
+npx Example
+
+You borrow your friend's phone, open Spotify, listen to songs, and return the phone.
+
+You didn't install the app
+
+You only used it temporarily
+
+👉 Similar to using npx
+
+Vite Command Explanation
+
+Command:
+
+npm create vite@latest app-name -- --template react
+Part	Meaning
+npm	Node Package Manager
+create	Creates the project structure (scaffolding)
+vite	Tool used to create the project
+@latest	Installs the latest version
+app-name	Your project name
+--	Indicates the next command belongs to Vite
+--template	Used to select the template
+react	React template
+Naming Rules for React Projects
+
+When creating a React project:
+
+✅ Use lowercase letters
+
+Examples:
+
+my-app
+react-project
+music-player
+
+❌ Avoid:
+
+Uppercase letters
+
+Starting with numbers
+
+Special characters
+
+Wrong examples:
+
+MyApp ❌
+123react ❌
+react@project ❌
+
+Hyphen - is allowed.
+
+Examples:
+
+food-app
+task-manager
+Prerequisites
+
+Before creating a React application:
+
+Install Node.js
+
+Download from:
+
+https://nodejs.org
+
+Check Node version:
+
+node -v
+
+Check npm version:
+
+npm -v
+Steps to Create a React App using Vite
+Step 1 – Open Terminal
+
+Navigate to your working folder.
+
+Example:
+
+cd Desktop
+Step 2 – Create the React Project
+npm create vite@latest my-app -- --template react
+Step 3 – Install Dependencies
+npm install
+Step 4 – Run the Application
+npm run dev
+
+Then open the localhost URL shown in the terminal.
+
+Example:
+
+http://localhost:5173
+React Folder Structure (Vite)
+node_modules
+
+Contains all installed packages and dependencies required for the project.
+
+Example:
+
+react
+react-dom
+vite
+public folder
+
+Contains static files accessible publicly.
+
+Examples:
+
+logos
+
+icons
+
+images
+
+These files can be accessed directly by the browser.
+
+src folder
+
+The main development folder.
+
+Most coding happens inside this folder.
+
+assets folder
+
+Used to store multimedia resources such as:
+
+images
+
+videos
+
+icons
+
+SVG files
+
+App.css and index.css
+App.css
+
+Used for styling the App component.
+
+App.jsx → App.css
+index.css
+
+Used for global styling.
+
+Applies to the entire application.
+
+React Application Flow
+
+Browsers help load our React application.
+
+Browser
+   |
+index.html  (Single Page Application)
+   |
+main.jsx    (Entry Point)
+   |
+App.jsx     (Rendering Component)
+Explanation
+index.html
+
+The root HTML file of the React project.
+
+Contains the root container.
+
+Example:
+
+<div id="root"></div>
+
+React renders the entire application inside this root element.
+
+main.jsx
+
+The entry point of the React application.
+
+It connects React with the DOM.
+
+Example:
+
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import App from './App.jsx'
+
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <App />
+)
+App.jsx
+
+Main React component.
+
+Responsible for rendering UI components.
+
+Example:
+
+Header
+Navbar
+Content
+Footer
+Important Project Files
+.gitignore
+
+Defines files that Git should ignore while pushing code to repository.
+
+Common ignored files:
+
+node_modules
+dist
+.env
+package.json
+
+Contains project configuration such as:
+
+dependencies
+
+scripts
+
+project name
+
+version
+
+Example:
+
+dependencies
+scripts
+author
+license
+package-lock.json
+
+Locks the exact version of dependencies.
+
+Ensures the same versions are installed on every system.
+
+README.md
+
+Contains project documentation.
+
+Usually includes:
+
+project description
+
+installation steps
+
+usage instructions
+
+Example:
+
+Project Name
+Installation Steps
+How to run the project
+vite.config.js
+
+Configuration file for Vite build tool.
+
+Used to customize:
+
+plugins
+
+server configuration
+
+build settings
+
+Example:
+
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+
+export default defineConfig({
+  plugins: [react()],
+})
+eslint.config.js
+
+Configuration file for ESLint (code quality tool).
+
+Helps detect:
+
+syntax errors
+
+bad coding practices
+
+formatting issues
+
+It acts like a rulebook for writing clean code.
