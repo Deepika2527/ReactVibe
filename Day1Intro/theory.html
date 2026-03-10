@@ -1,0 +1,374 @@
+Introduction to React JS (Teaching Notes)
+1. Web Development Basics
+
+Before learning React, students must understand the basic technologies used to build websites.
+
+HTML – Structure
+
+HTML is used to create the structure of a webpage.
+
+Example:
+
+<h1>Welcome</h1>
+<p>This is a paragraph</p>
+
+It defines what content appears on the page.
+
+CSS – Styling
+
+CSS is used to style the webpage.
+
+Example:
+
+h1{
+   color: blue;
+   font-size: 30px;
+}
+
+It controls:
+
+Colors
+
+Layout
+
+Fonts
+
+Spacing
+
+JavaScript – Functionality
+
+JavaScript adds dynamic behavior to websites.
+
+Example:
+
+function showMessage(){
+   alert("Hello User!");
+}
+
+JavaScript is used for:
+
+Button actions
+
+Form validation
+
+Dynamic updates
+
+Interactive UI
+
+What is React JS?
+
+React is an Open Source JavaScript Library used for building User Interfaces (UI), especially Single Page Applications (SPA).
+
+Developed by Jordan Walke at Facebook.
+
+Key Features of React
+1️⃣ Single Page Application (SPA)
+
+A Single Page Application loads only one HTML page, and content updates dynamically without refreshing the entire page.
+
+Example websites:
+
+Gmail
+
+Facebook
+
+Netflix
+
+Only the required part of the page updates.
+
+2️⃣ Component-Based Architecture
+
+React applications are built using components.
+
+A component is a small reusable piece of UI.
+
+Example Structure:
+
+App
+ ├── Header
+ ├── Home
+ ├── Products
+ └── Contact
+
+Example files:
+
+Home.jsx
+Products.jsx
+Contact.jsx
+
+Usage:
+
+<Home/>
+<Products/>
+<Contact/>
+
+Advantages:
+
+Reusable
+
+Easy to maintain
+
+Organized code
+
+3️⃣ Virtual DOM
+
+DOM = Document Object Model.
+
+Normally when a change happens:
+
+Real DOM
+100 elements → change 1 element → entire DOM updates
+
+But React uses Virtual DOM.
+
+Process:
+
+Real DOM = 100 elements
+Change = 1 element
+
+Virtual DOM compares
+Old vs New
+
+Only the changed element updates
+
+Result:
+
+Faster updates
+
+Better performance
+
+4️⃣ One Way Data Binding
+
+React follows Unidirectional Data Flow.
+
+Data flows:
+
+Parent → Child
+
+Example:
+
+<Header title="Welcome"/>
+
+This makes applications:
+
+Predictable
+
+Easier to debug
+
+5️⃣ JSX (JavaScript XML)
+
+JSX allows us to write HTML inside JavaScript.
+
+Example:
+
+const element = <h1>Hello</h1>
+
+Behind the scenes it converts into:
+
+React.createElement("h1", null, "Hello")
+
+JSX is not understood by browsers directly.
+
+It must be converted using Babel.
+
+6️⃣ Reusable Components
+
+Once a component is created, it can be reused anywhere.
+
+Example:
+
+<Button/>
+<Button/>
+<Button/>
+
+Benefits:
+
+Saves time
+
+Reduces code duplication
+
+7️⃣ High Performance
+
+React is fast because of:
+
+Virtual DOM
+
+Efficient updates
+
+Component architecture
+
+8️⃣ Strong Community
+
+React has a huge developer community.
+
+Many companies use it:
+
+Meta
+
+Netflix
+
+Airbnb
+
+Instagram
+
+Compiler vs Interpreter vs Transpiler
+Compiler
+
+A compiler converts one programming language into another language before execution.
+
+Example:
+
+C → Machine Code
+Interpreter
+
+An interpreter executes code line by line.
+
+Example languages:
+
+Python
+
+JavaScript
+
+Transpiler
+
+A transpiler converts one version of a language to another version of the same language.
+
+Example:
+
+ES6 → ES5
+
+Tool used:
+
+Babel
+
+Example:
+
+ES6
+
+const add = (a,b) => a+b
+
+Converted to ES5
+
+var add = function(a,b){
+  return a+b;
+}
+MVC Architecture
+
+MVC stands for Model View Controller.
+
+Model
+
+Handles data and database.
+
+Example:
+
+User data
+Products data
+View
+
+Handles the UI / User Interface.
+
+Example:
+
+HTML pages
+Components
+Controller
+
+Handles the application logic.
+
+Example:
+
+User requests
+Processing data
+Sending response
+
+Flow:
+
+User → Controller → Model → View
+History of React JS
+2011
+
+React was created by Jordan Walke and used internally at Facebook.
+
+2013
+
+React was released as open source.
+
+Major features:
+
+Virtual DOM
+
+Single Page Applications
+
+2014
+
+React Native introduced for building mobile applications.
+
+2015
+
+React started using ES6 features like:
+
+let
+
+const
+
+Arrow functions
+
+Modules
+
+Destructuring
+
+Array methods
+
+2016
+
+Create React App (CRA) was introduced.
+
+Used to create React projects easily using CLI.
+
+2017
+
+Important concepts introduced:
+
+Error Boundaries
+
+Reconciliation
+
+React Fiber
+
+2018
+
+Major update: React Hooks
+
+Developers could use state and lifecycle in functional components.
+
+Example:
+
+useState
+useEffect
+2019
+
+Create React App used for large-scale applications, but performance issues appeared.
+
+2020
+
+Vite introduced as a faster alternative to CRA.
+
+2021
+
+More advanced React Hooks introduced.
+
+2023 – 2024
+
+Rise of Server Side Rendering frameworks like:
+
+Next.js
+
+Benefits:
+
+SEO optimization
+
+Faster loading
+
+Better performance
+
