@@ -1,0 +1,257 @@
+Module :
+
+LOGIC
+
+Modules :
+Modules help us organize the code into different files.
+Instead of writing everything in one file, we can split the code into modules
+and reuse them wherever needed.
+
+In React every file can act as a module.
+
+Modules can be exported in two ways
+
+1. Default export
+2. Named export
+
+Default Export                           Named export
+1. One Component can be exported         1. Multiple components can be exported
+2. export default component_name         2. export infront of the component
+3. This doesnt requires {}               3. This requires {}
+4. Naming conventions are ok             4. This is manadatory namin convetion
+
+ex:
+
+exporting:
+export default App
+
+importing:
+import App from './App.jsx'
+
+Example for named export:
+
+export function Header(){
+
+}
+
+export function Footer(){
+
+}
+
+Importing:
+import {Header,Footer} from './App.jsx'
+
+------------------------------------------------------------------------------------
+
+Components :
+
+Piece of code which retuns the UI .
+
+Every component is like a Lego/Building blocks.
+
+React applications are made by combining multiple components.
+
+Example:
+Header
+Navbar
+Products
+Footer
+
+Each section can be created as a separate component.
+
+------------------------------------------------------------------------------------
+
+There are two ways to define the Components
+
+1. Functional Components  -*****
+2. Class Components
+
+
+class Test extends React.Component{
+
+}
+
+Earlier React used Class components more, but now mostly
+Functional Components are used.
+
+------------------------------------------------------------------------------------
+
+1. Functional components:
+
+function App(){
+    return(
+        <>
+           Jsx
+        </>
+    )
+}
+
+export default App
+
+why do we need to use the retun??
+
+This will returns the UI that will be displayed in the browser.
+
+------------------------------------------------------------------------------------
+
+() - to say that we are using multiple tags.
+
+Example without ()
+
+function App(){
+
+  return <h1>Hello</h1>
+
+}
+
+export default App
+
+
+Example with multiple elements
+
+<h1>
+<p>
+
+React will throw error because React expects a single parent element.
+
+------------------------------------------------------------------------------------
+
+Fragments
+
+<></> or <div> </div> - Fragments or wrappers - Parent element
+
+React requires a single parent element.
+
+Example:
+
+<>
+<h1>Hello</h1>
+<p>Welcome</p>
+</>
+
+Fragments helps us avoid unnecessary div elements in the DOM.
+
+------------------------------------------------------------------------------------
+
+Jsx
+
+JSX - Javascript + extensible Markup lanaguge
+
+It looks similar to HTML but it is actually JavaScript.
+
+JSX follows XHTML rules so it is very strict.
+
+Browser cannot understand JSX directly.
+
+Babel - Transpiler
+
+Babel will convert JSX into JavaScript code which the browser can understand.
+
+------------------------------------------------------------------------------------
+
+Example
+
+function App(){
+    return(
+        <>
+        <h1> Hello Anu </h1>
+        </>
+    )
+}
+
+How the babel will Translate
+
+function App(){
+
+React.createElement('h1',null,'Hello Anu')
+
+}
+
+React.createElement helps React create elements in Virtual DOM.
+
+------------------------------------------------------------------------------------
+
+Rules:
+
+1. Js should be written above the retun statement and if we are using it in the jsx we need to define that in {}
+
+example
+
+name = "Anu"
+
+function greet(){
+
+   console.log(name)
+
+}
+
+in React
+
+function App(){
+
+    name = "Anuradha"
+
+    return(
+        <>
+           <h1> {name} </h1>
+        </>
+    )
+
+}
+
+Inside {} we can write variables, expressions and functions.
+
+Example
+
+<h1>{5+5}</h1>
+
+Output
+10
+
+------------------------------------------------------------------------------------
+
+2. Even single tags has to be closed like
+
+<img/>
+<input/>
+<br/>
+<hr/>
+
+JSX follows XML rules so every tag must be closed.
+
+------------------------------------------------------------------------------------
+
+3. HTML attributes are different in JSX
+
+class - className
+click - onClick
+for - htmlFor
+
+Example
+
+<h1 className="title">Hello</h1>
+
+<button onClick={handleClick}>Click</button>
+
+------------------------------------------------------------------------------------
+
+Do_Follow_Steps:
+
+1. Always the functional component should starts with Captial Letter
+
+Example
+App
+Home
+Header
+
+2. Keep the .App.css and Index.css in comments
+
+3. Clear the App.jsx and write your own functional component and export it using named/default.
+
+4. Import the App in Main.jsx
+
+Example
+
+import App from './App.jsx'
+
+------------------------------------------------------------------------------------
