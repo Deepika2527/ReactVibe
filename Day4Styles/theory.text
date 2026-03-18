@@ -1,0 +1,74 @@
+css Styles in react
+
+In react we use 4 ways to create  styling
+1. Inline
+2. Internal 
+3. External
+4. Modules
+
+
+1. Inline
+these are the styles that are applied inside the tag
+
+syntax:
+style = {{backgroundColor:'red',fontSize:'32px'}}
+
+why do we use {{}} ??
+first {} - jsx
+second {} - stylimg in a object ways
+
+
+
+one more way to create the inlinecss
+
+Rules to remember:
+Camelcase is allowed
+fontSize
+backgroundColor
+
+not allowed
+font-size
+background-Color
+
+----------------------------------------------------------------------------------------
+2. Internal :
+
+This is used to write by using <style> tag below the return and <>
+
+syntax:
+<style>
+{
+`
+  .selector{
+    property: value;
+    proeprty2 : value2
+  }
+
+
+
+`
+
+}
+
+{} - for an object
+`` - mutliple lines/mutiple seledctors
+
+
+
+
+
+
+</style>
+
+
+
+
+
+
+
+----------------------------------------------------------------------------------------
+3. Extrenal : We use two files .jsx and .css
+
+syntnax:
+import './cssfilename"
+

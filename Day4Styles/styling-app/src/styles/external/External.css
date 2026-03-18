@@ -1,0 +1,25 @@
+.imgPic{
+    height: 300px;
+    width: 300px;
+}
+
+.imgPro{
+    background-image: url('https://images.pexels.com/photos/1323550/pexels-photo-1323550.jpeg');
+    height: 400px;
+    background-position: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.para{
+   color: orangered;
+   font-weight: 400;
+}
+#btn{
+    height: 70px;
+    width: 90px;
+    color:orangered;
+    background-color: wheat;
+    border-radius: 10px;
+}
