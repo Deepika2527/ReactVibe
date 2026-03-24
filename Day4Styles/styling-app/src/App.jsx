@@ -2,6 +2,8 @@ import React from 'react'
 import Inline from './styles/inline/Inline'
 import External from './styles/external/External'
 import Internal from './styles/intrenal/Internal'
+import CompA from '../src/modules/CompA'
+import CompB from './modules/CompB'
 
 function App() {
   
@@ -13,7 +15,10 @@ function App() {
       <hr />
       <External/> */}
       <hr />
-      <Internal/>
+      {/* <Internal/> */}
+      <hr />
+      <CompA/>
+      <CompB/>
       
     </div>
   )
