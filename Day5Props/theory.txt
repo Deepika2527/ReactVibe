@@ -1,0 +1,61 @@
+BOOTSTRAP :
+
+In a Vite application:
+
+Step 1: Install Bootstrap
+npm install bootstrap
+
+Step 2: Verify installation
+
+* Check in node_modules
+* Check in package.json
+
+Step 3: Import Bootstrap in App.jsx
+
+Syntax:
+import 'bootstrap/dist/css/bootstrap.min.css'
+import 'bootstrap/dist/js/bootstrap.bundle.min.js'
+
+PROPS :
+
+Props (short for Properties) are used to pass data from one component to another component.
+
+* Data is passed from Parent Component to Child Component
+* Props are read-only (immutable)
+* A child component can accept props but cannot modify them
+
+WAYS TO DEFINE PROPS :
+
+1. Standard Props
+
+2. Destructuring Props
+
+3. Prop Drilling
+
+4. Callback Props
+
+5. Default Props
+
+6. Props as Children
+
+7. STANDARD PROPS :
+
+These are the basic way of passing props.
+
+Syntax (Parent Component): <Child reference1={value1} reference2={value2} />
+
+Syntax (Child Component):
+function Child(props) {
+props.reference1
+props.reference2
+}
+
+2. DESTRUCTURING PROPS :
+
+This is a cleaner way of accessing props using object destructuring.
+
+Syntax (Child Component):
+function Child({ reference1, reference2 }) {
+reference1
+reference2
+}
