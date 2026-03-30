@@ -36,8 +36,6 @@ WAYS TO DEFINE PROPS :
 
 5. Default Props
 
-6. Props as Children
-
 7. STANDARD PROPS :
 
 These are the basic way of passing props.
@@ -59,3 +57,22 @@ function Child({ reference1, reference2 }) {
 reference1
 reference2
 }
+
+
+
+3. PropDrilling - usecontext
+
+Grandparent -> parent-> child
+
+
+
+
+4. Callback prop:
+
+
+
+5: in js
+function test(a=10,b=20){
+    log(a+b)
+}
+test()
