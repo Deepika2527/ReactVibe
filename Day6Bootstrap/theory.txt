@@ -1,0 +1,16 @@
+Bootstrap:
+css a framework
+
+
+in react we can use bootstarp in 2 ways:
+1. cdn links - index.html
+2. importing the Bootstrap
+way2: we use either of these commands
+step1 :
+npm install Bootstrap
+npm i bootstrap
+
+step2 : In app.jsx set the path using importing
+
+step 3:
+
