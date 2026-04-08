@@ -1,0 +1,53 @@
+state
+why do we need a state?
+how can we create state in class component and also in functional component
+
+
+State: This is an internal object provided by the react
+State is mutable -can be changed, the  updated values will be displayed in UI
+
+in real time :
+Lets us consiser the cart where we can update the cart either by adding pr deleting..
+
+we can use states in fu
+fntional components and class components
+
+funtional components:
+the state in the functional compoment can b e defined in the [] -destructring
+usestate need to be imported
+
+
+step 1:
+import the usestate
+step 2 :
+creating the state
+[state,set_state] = usestate(inital_value)
+step 3: never upadte the state directly
+state = state+1  ❌
+setstate(state+1)
+
+
+class compoment:
+
+step1 : class CompName extends components{
+
+}
+step 2: render(){
+   what has to be displayed
+}
+step 3: Inside the render you we have return(
+    <>
+
+   RETURN- display of UI
+)
+step : state = {
+    count :0
+}
+Note: in class compoment while accessing the state we need this keyword
+We dont define funtion with function keyword.❌
+
+
+
+
+
+
