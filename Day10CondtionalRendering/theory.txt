@@ -1,0 +1,51 @@
+conditional Rendering:
+Condtional Rendering is like based on condtions and it will comntrolled what is upposed to be dipslyed on UI
+
+Types of condtionla rendering:
+If-else
+Ternary
+Switch
+Logical && - short circuit
+Elment variable
+
+
+If-else:
+
+
+syntax:
+if(condtion){
+    retunr <True Component>
+}
+else{
+    return <False compoment>
+}
+
+Ternary Opertor:
+short hand for if-else
+
+
+synatx:
+{Condition? <True/> : <False/>}
+
+
+Switch case:
+
+syntax:
+function demo(){
+     switc(condtion):
+ case A : retunr  <jsx>
+ case B: return <jsx>
+ default : return <jsx>
+
+}
+
+
+ return(
+    {demo()}
+ )
+
+
+short circuiit: &&
+syntax:
+{condition retun<jsx>}
+   
