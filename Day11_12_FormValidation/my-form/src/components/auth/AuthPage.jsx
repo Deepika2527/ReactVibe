@@ -4,6 +4,7 @@ import Buttn from '../common/Buttn'
 import SignIn from './SignIn'
 import SignUp from './SignUp'
 
+
 function AuthPage() {
     const [isLogin,setLogin] = useState(true)
   return (
@@ -30,6 +31,7 @@ function AuthPage() {
                  {/* condtionla rendering */}
                  <div className="w-75">
                     {isLogin ? <SignIn/>: <SignUp/>}
+                    
                  </div>
              </div>
 

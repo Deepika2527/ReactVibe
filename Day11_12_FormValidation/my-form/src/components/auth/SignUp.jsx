@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 
+import { valdiateName,validateEmail,valdiatePassword,validatePhone } from '../../validations/RegexV'
+
 function SignUp() {
     // taking state and keep them as empty string
     const [input,setInput] = useState({
@@ -32,10 +34,14 @@ function SignUp() {
         e.preventDefault()
         const err = {}
 
-        err.nameErr = input.name === ""? "Enter the name"  : ""
-        err.emailErr = !input.email.includes('@')? "Email should contains a@" : ""
-        err.paswdErr = input.password.length <6 ? "pswd should containe 6 chars" : ""
-        err.phoneErr = input.phone.length <10 ? "Phone number shoul contains 10 digits" : ""
+        // err.nameErr = input.name === ""? "Enter the name"  : ""
+        // err.emailErr = !input.email.includes('@')? "Email should contains a@" : ""
+        // err.paswdErr = input.password.length <6 ? "pswd should containe 6 chars" : ""
+        // err.phoneErr = input.phone.length <10 ? "Phone number shoul contains 10 digits" : ""
+        err.nameErr = !valdiateName(input.name) ? "Required minimu 5 charcter" : ""
+        err.emailErr = !validateEmail(input.email) ? "Email should not have @ in the naming" : ""
+        err.paswdErr = !valdiatePassword(input.password) ? "pswd shld contains letters and digits" : ""
+        err.phoneErr = !validatePhone(input.phone) ? "Phone must be 10 digits" : ""
 
 
         console.log("Errors", err);
@@ -74,7 +80,7 @@ function SignUp() {
         </div>
         {/* phone */}
         <div className="mb-4">
-            <input type="text" name="phoneno" value={input.phone}  placeholder='Enter Your phone number' className='form-control'  onChange={handleInput}/>
+            <input type="text" name="phone" value={input.phone}  placeholder='Enter Your phone number' className='form-control'  onChange={handleInput}/>
             <small className='text-danger'>{errors.phoneErr}</small>
         </div>
 
