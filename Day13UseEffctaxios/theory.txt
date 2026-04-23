@@ -1,0 +1,201 @@
+USEEFFECT HOOK - CLEAR NOTES
+
+1.  What is useEffect? useEffect is a React Hook used to handle side
+    effects in functional components.
+
+Side effects include: - API calls - Timers - DOM updates - Event
+subscriptions
+
+------------------------------------------------------------------------
+
+2.  Why do we use useEffect?
+
+-   To run code after rendering
+-   To handle external operations like API calls
+-   To control when code should execute
+-   To prevent unnecessary re-renders
+
+------------------------------------------------------------------------
+
+3.  Syntax
+
+useEffect(() => { // side effect code }, [dependencies])
+
+------------------------------------------------------------------------
+
+4.  Types of useEffect
+
+Case 1: No dependency array Runs on every render
+
+Case 2: Empty dependency array [] Runs only once (initial render)
+
+Case 3: With dependencies [value] Runs when the value changes
+
+Case 4: Multiple dependencies [a, b] Runs when any dependency changes
+
+------------------------------------------------------------------------
+
+5.  Example (API Call)
+
+useEffect(() => { async function fetchData() { const { data } = await
+axios.get(“https://dummyjson.com/products”) setproduct(data.products)
+setLoading(false) } fetchData() }, [])
+
+------------------------------------------------------------------------
+
+6.  Cleanup Function
+
+useEffect(() => { const timer = setInterval(() => {
+console.log(“Running…”) }, 1000)
+
+    return () => {
+        clearInterval(timer)
+    }
+
+}, [])
+
+------------------------------------------------------------------------
+
+7.  Key Points
+
+-   Runs after render
+-   Used for side effects
+-   Dependency array controls execution
+-   [] -> run once
+-   [value] -> run on change
+-   No array -> runs every render
+
+------------------------------------------------------------------------
+
+8.  Common Mistakes
+
+-   Missing dependency array
+-   Infinite loops when updating state incorrectly
+-   Calling APIs inside render instead of useEffect
+
+------------------------------------------------------------------------
+
+9.  Interview Answer
+
+useEffect is a React Hook used to perform side effects like API calls,
+timers, and DOM updates after rendering. It takes a callback function
+and a dependency array to control when it runs.
+AXIOS - CLEAR NOTES
+
+1. What is Axios?
+Axios is a JavaScript library used to make HTTP requests from browser or Node.js.
+
+It is mainly used to:
+- Fetch data from API
+- Send data to server
+
+--------------------------------------------------
+
+2. Why do we use Axios?
+
+- Easy to use compared to fetch
+- Automatically converts JSON data
+- Handles errors better
+- Supports async/await
+- Works with interceptors
+
+--------------------------------------------------
+
+3. Installation
+
+npm install axios
+
+--------------------------------------------------
+
+4. Import Axios
+
+import axios from 'axios'
+
+--------------------------------------------------
+
+5. Basic GET Request
+
+axios.get("https://dummyjson.com/products")
+.then(response => {
+    console.log(response.data)
+})
+
+--------------------------------------------------
+
+6. Using async/await
+
+async function fetchData() {
+    const { data } = await axios.get("https://dummyjson.com/products")
+    console.log(data)
+}
+
+--------------------------------------------------
+
+7. POST Request
+
+axios.post("https://api.example.com/users", {
+    name: "John",
+    age: 25
+})
+
+--------------------------------------------------
+
+8. PUT Request (Update)
+
+axios.put("https://api.example.com/users/1", {
+    name: "Updated Name"
+})
+
+--------------------------------------------------
+
+9. DELETE Request
+
+axios.delete("https://api.example.com/users/1")
+
+--------------------------------------------------
+
+10. Error Handling
+
+try {
+    const { data } = await axios.get("url")
+} catch (error) {
+    console.log(error.message)
+}
+
+--------------------------------------------------
+
+11. Axios Response Structure
+
+const response = await axios.get("url")
+
+response.data      -> actual data
+response.status    -> status code
+response.headers   -> headers
+
+--------------------------------------------------
+
+12. Axios with useEffect (React)
+
+useEffect(() => {
+    async function fetchData() {
+        const { data } = await axios.get("https://dummyjson.com/products")
+        setproduct(data.products)
+    }
+    fetchData()
+}, [])
+
+--------------------------------------------------
+
+13. Key Points
+
+- Axios returns a promise
+- Automatically parses JSON
+- Works with async/await
+- Used for API calls
+- Cleaner than fetch
+
+--------------------------------------------------
+
+14. Interview Answer
+
+Axios is a promise-based HTTP client used to make API requests in JavaScript. It simplifies sending and receiving data, supports async/await, and provides better error handling compared to fetch.
