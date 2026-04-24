@@ -6,6 +6,7 @@ import Loader from '../../components/Loader'
 const ProductDetails = () => {
     const [loading, setLoading] = useState(true)
     const [product, setproduct] = useState([])
+    const [page,setPage] = useState(1)
 
     // useEffect(()=>{
     //     async function productApi(){
@@ -37,6 +38,9 @@ const ProductDetails = () => {
         productApi()
 
     }, [])
+    const  perpage = 10
+    const pagination = product.slice((page-1)*perpage, page*perpage)
+    
 
 
     return (
@@ -44,7 +48,7 @@ const ProductDetails = () => {
             {loading ? <Loader /> : <div className='container mt-5'>
                 <div className="row g-5">
                     {
-                        product.map((item) => (
+                        pagination.map((item) => (
                             <div className="col-md-4" key={item.id}>
                                 <div className="card h-100 shadow-sm border-0 rounded-3">
                                     <img
@@ -62,7 +66,7 @@ const ProductDetails = () => {
                                         </p>
                                         <div className="d-flex justify-content-center mt-auto">
                                             <a href="#" className="btn btn-primary btn-sm">
-                                                Go somewhere
+                                                Add to cart
                                             </a>
                                         </div>
                                     </div>
@@ -76,6 +80,22 @@ const ProductDetails = () => {
                 </div>
 
             </div>}
+
+            {/* Pagination */}
+            <div className="row justify-content-center mt-4">
+                {
+                    [1,2,3,4,5,6,7,8,9,10].map(page => (
+                     <div className="container col-md-1">
+                         <button className="btn btn-primary" onClick={()=>setPage(page)}>{page}</button>
+                     </div>
+                            
+                       
+                    ))
+                }
+            </div>
+
+
+
         </>
 
     )
