@@ -1,10 +1,12 @@
 import React from 'react'
-import ProductDetails from '../features/products/ProductDetails'
+import Myproducts from '../features/products/Myproducts'
+// import ProductDetails from '../features/products/ProductDetails'
 
 const Product = () => {
   return (
     <div className="container mt-5 bg-light">
-        <ProductDetails/>
+        {/* <ProductDetails/> */}
+        <Myproducts/>
         
     </div>
   )
