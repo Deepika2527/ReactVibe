@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
+import { lazy,Suspense } from 'react'
+
+const ProductsCards = React.lazy(()=>import('./ProductsCard'))
 
 function Myproducts() {
     const [products, setproducts] = useState([])
@@ -78,22 +81,17 @@ function Myproducts() {
                     </div>
                 </div>
             </div>
+            {/* products containers */}
             <div className="container mt-3">
                 <div className="row g-3">
-                    {
-                        products.map(item => (
-                            <div className="col-md-4" key={item.id}>
-                                <div className="card" style={{width: "18rem"}}>
-                                    <img src={item.images[0]} className="card-img-top" alt="..."/>
-                                        <div className="card-body">
-                                            <h5 className="card-title">{item.title}</h5>
-                                            <p className="card-text">{item.description.length >50 ? item.description.slice(0,50)+"...": item.description}</p>
-                                            <a href="#" className="btn btn-primary">Go somewhere</a>
-                                        </div>
-                                </div>
-                            </div>
+                    <Suspense fallback={<h2>Loading....</h2>}>
+                       {
+                        products.map(item =>(
+                            <ProductsCards  key={item.id} item={item}/>
                         ))
-                    }
+                       }
+
+                    </Suspense>
 
                 </div>
             </div>

@@ -1,0 +1,26 @@
+prop drilling -
+This is a process where the prop of a parent component will be passed through  the intermediate components inorder to react the subchild component
+
+comp A ------> Comp B ------>Comp c
+
+
+
+to overcome this problem we useContext
+
+UseContext
+
+step 1:  create an varaible by using useContext
+
+synatx
+export  const dataContext = createContext()
+
+
+step 2: <dataContext.provider value={name}>
+//code
+
+
+<dataContext.provider />
+
+
+step 3: 
+comst name = UseContext(dataContext)
