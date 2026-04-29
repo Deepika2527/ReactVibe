@@ -24,3 +24,30 @@ step 2: <dataContext.provider value={name}>
 
 step 3: 
 comst name = UseContext(dataContext)
+----------------------------------------------------------------------------------------------
+
+
+
+
+CustomHooks:
+Hooks- these are special properties that are provide by the react fucntions
+builtin
+useContext -  to handle propr drilling
+useState  - to update/manipulate the states
+useEffect  - to handle the apis, timer functions
+useMemo   - calculation
+useRef   - to avoid rerendering of the dom when come to a button click, inchange
+useCallbacks - to track the fucntions
+
+
+we can also create the builtin hooks- custom hooks, using use
+why??
+to reuse the logic
+
+note we need to use custom hooks with lowercase use✅ not Use❌
+
+syntax:
+funtion useCustomHook(p1,p2){
+    return{p1,p2}
+}
+
