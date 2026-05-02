@@ -78,6 +78,170 @@ g - ReduxHook -ecternal
 
 
 -------------------------------------------------------------------
-useMemo()- This will memorise/cache the caluacted values to prebent rendering the unnecessary 
+USEMEMO HOOK – COMPLETE THEORY
 
-useMemo(()={//block of code},[])
+1. Definition:
+   useMemo is a React Hook used to memoize (cache) a calculated value so that the value is not recomputed on every render.
+
+In simple words:
+useMemo stores the result of a function and only recalculates it when its dependencies change.
+
+---
+
+2. Syntax:
+
+const memoizedValue = useMemo(() => {
+// expensive calculation
+return value;
+}, [dependencies]);
+
+OR (short form):
+
+const memoizedValue = useMemo(() => calculation(), [dependencies]);
+
+---
+
+3. Why useMemo is needed?
+
+In React, whenever a component re-renders:
+
+* All calculations inside it run again
+
+This can cause:
+
+* Performance issues (especially for heavy calculations)
+
+useMemo helps to:
+
+* Avoid unnecessary recalculations
+* Improve performance
+
+---
+
+4. Without useMemo:
+
+Example:
+
+const result = expensiveFunction(count);
+
+Problem:
+
+* Function runs on every render
+* Even if count is not changed
+* Causes unnecessary computation
+
+---
+
+5. With useMemo:
+
+Example:
+
+const result = useMemo(() => {
+return expensiveFunction(count);
+}, [count]);
+
+Benefit:
+
+* Function runs only when "count" changes
+* Prevents unnecessary calculations
+
+---
+
+6. Key Concept:
+
+* useMemo caches the RESULT (value)
+* It re-executes only when dependencies change
+
+---
+
+7. Difference between useMemo and useCallback:
+
+useMemo:
+
+* Memoizes VALUE
+
+useCallback:
+
+* Memoizes FUNCTION
+
+--------------------------------------------------------------------
+
+8. Important Note:
+
+* useMemo does NOT prevent re-rendering
+* It only prevents recalculation
+
+------------------------------------------------------
+
+9. When to Use:
+
+* Expensive calculations
+* Filtering large lists
+* Sorting data
+* Derived values
+
+-------------------------------------------
+
+10. When NOT to Use:
+
+* Simple calculations
+* Small components
+* Overusing can increase complexity
+
+-------------------------------------------------------------------------
+
+11. Interview Explanation (Best Answer):
+
+useMemo is a React Hook used to optimize performance by memoizing the result of a function. It prevents unnecessary recalculations by recomputing the value only when its dependencies change. It is mainly used when dealing with expensive operations like filtering, sorting, or complex calculations.
+
+Short Answer:
+useMemo caches computed values to avoid unnecessary recalculations on re-renders.
+
+
+------------------------------------------------------------------------
+useCallback-
+useCallback is a React Hook used to memoize (remember) a function so that React does not recreate it on every render.
+Why do we need useCallback?
+
+In React:
+
+Every time a component re-renders
+ all functions inside it are re-created
+
+This becomes a problem when:
+
+You pass a function as a prop to a child component
+
+Because:
+
+ New function = New reference
+ React thinks props changed
+Child re-renders unnecessarily ❌
+-------------------------------------------------------------------------
+Syntax:
+const memoizedFunction = useCallback(() => {
+    // function logic
+}, [dependencies]);
+
+useCallback() → Memoizing the Function
+
+React.memo() → Preventing Child Re-render
+-------------------------------------------------------------------------
+
+Flow Understanding (Very Important)
+Without useCallback ❌
+Parent re-renders
+New function created
+Passed to child
+Child sees new prop
+Child re-renders ❌
+-----------------------------------------------------------------------------
+With useCallback ✅
+Parent re-renders
+Same function reused
+Passed to child
+Props unchanged
+Child does NOT re-render ✅
+ One-Line Interview Answer
+
+useCallback is used to memoize functions to prevent unnecessary re-renders when passing functions as props to child components.
