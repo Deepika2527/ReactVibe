@@ -51,3 +51,33 @@ funtion useCustomHook(p1,p2){
     return{p1,p2}
 }
 
+-----------------------------------------------------------------------
+builtin Hooks
+A- stateMangement
+   1.useState()
+   2.useReducer()
+
+
+B- properties
+    1.useContext()
+c- SideEffects
+   1.useEffects()
+   2.useLayoutEffect() x
+d- optimise th eperformance
+    1-useMemo()
+    2.useCallback()
+    3.useTransition() -Task
+e -Dom Manipulation
+    1-useRef()
+    2-useId() x
+f-RouterDom  -Extrenal
+   useLocatiom()
+   useNavigate() x
+   useParam()
+g - ReduxHook -ecternal
+
+
+-------------------------------------------------------------------
+useMemo()- This will memorise/cache the caluacted values to prebent rendering the unnecessary 
+
+useMemo(()={//block of code},[])
