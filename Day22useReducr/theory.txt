@@ -1,0 +1,9 @@
+Use Redcucer:
+This is an advanced hook for managing the stateMangement
+
+syntax:
+let[count,dispatch] = useReduer(ReducerFunction, current_state value)
+count - intial value
+dispatch - it send an object{type,payload}
+ReducerFunction - it will accept the dipatch,pure function, (curentstate,action)
+curentstate_value - 0
